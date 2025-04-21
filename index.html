@@ -6,294 +6,7 @@
     <link rel="icon" type="image/svg+xml"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ffdd00%22></rect><path fill=%22%23000000%22 d=%22M46.69 32.86L46.69 32.86Q46.69 34.38 45.86 35.48Q45.02 36.59 43.96 37.19L43.96 37.19Q41.98 35.90 39.55 34.84Q37.12 33.77 33.55 33.77L33.55 33.77Q27.09 33.77 23.25 37.95Q19.41 42.13 19.41 50.04L19.41 50.04Q19.41 58.09 23.36 62.12Q27.31 66.15 34.00 66.15L34.00 66.15Q37.50 66.15 40.04 65.20Q42.59 64.25 44.57 62.96L44.57 62.96Q45.63 63.64 46.31 64.82Q47.00 66.00 47.00 67.52L47.00 67.52Q47.00 68.81 46.31 69.87Q45.63 70.94 44.03 71.77L44.03 71.77Q42.51 72.69 39.74 73.48Q36.97 74.28 32.86 74.28L32.86 74.28Q27.85 74.28 23.55 72.80Q19.26 71.32 16.07 68.32Q12.87 65.31 11.05 60.75Q9.23 56.19 9.23 50.04L9.23 50.04Q9.23 44.11 11.05 39.59Q12.87 35.07 16.03 31.99Q19.18 28.91 23.40 27.31Q27.62 25.72 32.33 25.72L32.33 25.72Q35.60 25.72 38.26 26.29Q40.92 26.86 42.82 27.85Q44.72 28.83 45.71 30.13Q46.69 31.42 46.69 32.86ZM71.55 57.71L65.62 57.71L65.62 72.99Q64.93 73.14 63.68 73.37Q62.43 73.60 60.98 73.60L60.98 73.60Q58.09 73.60 56.92 72.53Q55.74 71.47 55.74 68.96L55.74 68.96L55.74 30.81Q55.74 29.37 56.50 28.61Q57.26 27.85 58.63 27.39L58.63 27.39Q59.84 27.01 61.32 26.71Q62.81 26.40 64.40 26.21Q66.00 26.02 67.59 25.95Q69.19 25.87 70.63 25.87L70.63 25.87Q80.67 25.87 85.72 30.16Q90.77 34.46 90.77 41.75L90.77 41.75Q90.77 49.05 85.83 53.38Q80.89 57.71 71.55 57.71L71.55 57.71ZM65.54 49.81L70.94 49.81Q75.50 49.81 78.12 47.83Q80.74 45.86 80.74 41.75L80.74 41.75Q80.74 37.80 78.27 35.83Q75.80 33.85 71.09 33.85L71.09 33.85Q67.82 33.85 65.54 34.31L65.54 34.31L65.54 49.81Z%22></path></svg>"/>
     <title>Christian Peters</title>
-    <style>
-        :root {
-            --primary-color: #ffdd00;
-            --secondary-color: #ffc107;
-            --accent-color: #3a7bd5;
-            --text-color: #333;
-            --light-text: #666;
-            --background: #f9f9f9;
-            --card-bg: #ffffff;
-            --transition: all 0.3s ease;
-            --contract-color: #000000;
-        }
-
-        /* Dark mode colors */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary-color: #ffdd00;
-                --secondary-color: #ffc107;
-                --accent-color: #5e9eff;
-                --text-color: #f0f0f0;
-                --light-text: #c0c0c0;
-                --background: #121212;
-                --card-bg: #1e1e1e;
-                --contract-color: #000000;
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        body {
-            background-color: var(--background);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--contract-color);
-            text-align: center;
-            padding: 3rem 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            flex: 1;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            margin-top: 2rem;
-            color: var(--text-color);
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-            color: var(--contract-color);
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin: 0 auto 1.5rem;
-            display: block;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .link-btn {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            background-color: var(--primary-color);
-            color: #000000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .link-btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .alt-btn {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .alt-btn:hover {
-            background-color: #4a8bea;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icon {
-            font-size: 1.5rem;
-            color: #000000;
-            transition: var(--transition);
-            background-color: rgba(255, 255, 255, 0.8);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-icon:hover {
-            color: #333;
-            background-color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .expertise-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        .expertise-tag {
-            background-color: rgba(255, 221, 0, 0.15);
-            color: #000000;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 221, 0, 0.5);
-        }
-
-        .featured-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .content-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .content-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .content-info {
-            padding: 1.5rem;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .testimonial {
-            font-style: italic;
-            padding: 1.5rem;
-            border-left: 3px solid var(--primary-color);
-            background-color: rgba(255, 221, 0, 0.05);
-            margin-bottom: 1.5rem;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            text-align: right;
-            color: #000000;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--card-bg);
-            margin-top: 2rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .featured-content {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .links {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -306,22 +19,27 @@
         <a href="https://youtube.com/@AlliChristianCode-l8m" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         <a href="#" onclick="revealEmail(); return false;" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
+
+    <div class="navigation">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/speaking" class="nav-link">Speaking</a>
+    </div>
 </header>
 
 <div class="container">
-    <!--    <div class="card">-->
-    <!--        <h2>About Me</h2>-->
-    <!--        <p>Hello! I'm a passionate leader with extensive experience in building and guiding high-performing teams. With-->
-    <!--            a background in [your background], I help organizations and individuals unlock their full potential through-->
-    <!--            effective leadership strategies.</p>-->
-    <!--        <p>My approach combines practical experience, continuous learning, and a deep understanding of what makes teams-->
-    <!--            thrive in challenging environments. I believe that great leadership creates the foundation for innovation-->
-    <!--            and success.</p>-->
+<!--        <div class="card">-->
+<!--            <h2>About Me</h2>-->
+<!--&lt;!&ndash;            <p>Hello! I'm a passionate leader with extensive experience in building and guiding high-performing teams. With&ndash;&gt;-->
+<!--&lt;!&ndash;                a background in [your background], I help organizations and individuals unlock their full potential through&ndash;&gt;-->
+<!--&lt;!&ndash;                effective leadership strategies.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>My approach combines practical experience, continuous learning, and a deep understanding of what makes teams&ndash;&gt;-->
+<!--&lt;!&ndash;                thrive in challenging environments. I believe that great leadership creates the foundation for innovation&ndash;&gt;-->
+<!--&lt;!&ndash;                and success.</p>&ndash;&gt;-->
 
-    <!--        <div class="links">-->
-    <!--            <a href="/speaking" class="link-btn">Speaking</a>-->
-    <!--        </div>-->
-    <!--    </div>-->
+<!--            <div class="links">-->
+<!--                <a href="/speaking" class="link-btn">Speaking</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
     <h2>Recent Content</h2>
     <div class="featured-content">
