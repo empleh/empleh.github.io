@@ -1,80 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ffdd00%22></rect><path fill=%22%23000000%22 d=%22M46.69 32.86L46.69 32.86Q46.69 34.38 45.86 35.48Q45.02 36.59 43.96 37.19L43.96 37.19Q41.98 35.90 39.55 34.84Q37.12 33.77 33.55 33.77L33.55 33.77Q27.09 33.77 23.25 37.95Q19.41 42.13 19.41 50.04L19.41 50.04Q19.41 58.09 23.36 62.12Q27.31 66.15 34.00 66.15L34.00 66.15Q37.50 66.15 40.04 65.20Q42.59 64.25 44.57 62.96L44.57 62.96Q45.63 63.64 46.31 64.82Q47.00 66.00 47.00 67.52L47.00 67.52Q47.00 68.81 46.31 69.87Q45.63 70.94 44.03 71.77L44.03 71.77Q42.51 72.69 39.74 73.48Q36.97 74.28 32.86 74.28L32.86 74.28Q27.85 74.28 23.55 72.80Q19.26 71.32 16.07 68.32Q12.87 65.31 11.05 60.75Q9.23 56.19 9.23 50.04L9.23 50.04Q9.23 44.11 11.05 39.59Q12.87 35.07 16.03 31.99Q19.18 28.91 23.40 27.31Q27.62 25.72 32.33 25.72L32.33 25.72Q35.60 25.72 38.26 26.29Q40.92 26.86 42.82 27.85Q44.72 28.83 45.71 30.13Q46.69 31.42 46.69 32.86ZM71.55 57.71L65.62 57.71L65.62 72.99Q64.93 73.14 63.68 73.37Q62.43 73.60 60.98 73.60L60.98 73.60Q58.09 73.60 56.92 72.53Q55.74 71.47 55.74 68.96L55.74 68.96L55.74 30.81Q55.74 29.37 56.50 28.61Q57.26 27.85 58.63 27.39L58.63 27.39Q59.84 27.01 61.32 26.71Q62.81 26.40 64.40 26.21Q66.00 26.02 67.59 25.95Q69.19 25.87 70.63 25.87L70.63 25.87Q80.67 25.87 85.72 30.16Q90.77 34.46 90.77 41.75L90.77 41.75Q90.77 49.05 85.83 53.38Q80.89 57.71 71.55 57.71L71.55 57.71ZM65.54 49.81L70.94 49.81Q75.50 49.81 78.12 47.83Q80.74 45.86 80.74 41.75L80.74 41.75Q80.74 37.80 78.27 35.83Q75.80 33.85 71.09 33.85L71.09 33.85Q67.82 33.85 65.54 34.31L65.54 34.31L65.54 49.81Z%22></path></svg>"/>
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ffdd00%22></rect><path fill=%22%23000000%22 d=%22M46.69 32.86L46.69 32.86Q46.69 34.38 45.86 35.48Q45.02 36.59 43.96 37.19L43.96 37.19Q41.98 35.90 39.55 34.84Q37.12 33.77 33.55 33.77L33.55 33.77Q27.09 33.77 23.25 37.95Q19.41 42.13 19.41 50.04L19.41 50.04Q19.41 58.09 23.36 62.12Q27.31 66.15 34.00 66.15L34.00 66.15Q37.50 66.15 40.04 65.20Q42.59 64.25 44.57 62.96L44.57 62.96Q45.63 63.64 46.31 64.82Q47.00 66.00 47.00 67.52L47.00 67.52Q47.00 68.81 46.31 69.87Q45.63 70.94 44.03 71.77L44.03 71.77Q42.51 72.69 39.74 73.48Q36.97 74.28 32.86 74.28L32.86 74.28Q27.85 74.28 23.55 72.80Q19.26 71.32 16.07 68.32Q12.87 65.31 11.05 60.75Q9.23 56.19 9.23 50.04L9.23 50.04Q9.23 44.11 11.05 39.59Q12.87 35.07 16.03 31.99Q19.18 28.91 23.40 27.31Q27.62 25.72 32.33 25.72L32.33 25.72Q35.60 25.72 38.26 26.29Q40.92 26.86 42.82 27.85Q44.72 28.83 45.71 30.13Q46.69 31.42 46.69 32.86ZM71.55 57.71L65.62 57.71L65.62 72.99Q64.93 73.14 63.68 73.37Q62.43 73.60 60.98 73.60L60.98 73.60Q58.09 73.60 56.92 72.53Q55.74 71.47 55.74 68.96L55.74 68.96L55.74 30.81Q55.74 29.37 56.50 28.61Q57.26 27.85 58.63 27.39L58.63 27.39Q59.84 27.01 61.32 26.71Q62.81 26.40 64.40 26.21Q66.00 26.02 67.59 25.95Q69.19 25.87 70.63 25.87L70.63 25.87Q80.67 25.87 85.72 30.16Q90.77 34.46 90.77 41.75L90.77 41.75Q90.77 49.05 85.83 53.38Q80.89 57.71 71.55 57.71L71.55 57.71ZM65.54 49.81L70.94 49.81Q75.50 49.81 78.12 47.83Q80.74 45.86 80.74 41.75L80.74 41.75Q80.74 37.80 78.27 35.83Q75.80 33.85 71.09 33.85L71.09 33.85Q67.82 33.85 65.54 34.31L65.54 34.31L65.54 49.81Z%22></path></svg>" />
     <title>One Idea | Christian Peters</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-<header>
-    <img src="../images/profile.jpg" alt="Profile Picture" class="profile-image">
-    <h1>Christian Peters</h1>
-    <p class="tagline" style="font-size: 1.5rem; font-weight: 500; margin: 0.8rem 0;">Reader & Continual Learner</p>
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/christian-peters-tdddev" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://youtube.com/@AlliChristianCode-l8m" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" onclick="revealEmail(); return false;" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    </div>
-    <div class="navigation">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/speaking" class="nav-link">Speaking</a>
-        <a href="/one-idea" class="nav-link active">One Idea</a>
-    </div>
-</header>
+    <header>
+        <img src="../images/profile.jpg" alt="Profile Picture" class="profile-image">
+        <h1>Christian Peters</h1>
+        <p class="tagline" style="font-size: 1.5rem; font-weight: 500; margin: 0.8rem 0;">Reader & Continual Learner</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/christian-peters-tdddev" class="social-icon" aria-label="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com/@AlliChristianCode-l8m" class="social-icon" aria-label="YouTube"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="#" onclick="revealEmail(); return false;" class="social-icon" aria-label="Email"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+        <div class="navigation">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/speaking" class="nav-link">Speaking</a>
+            <a href="/one-idea" class="nav-link active">One Idea</a>
+        </div>
+    </header>
 
-<div class="container">
-    <div class="card">
-        <h2>One Idea</h2>
-        <p>
-            I read a lot of books, over 60 a year for the last few years.
-            <br>
-            I have a mindset that if I can consume a book quickly and take away even just one idea, apply that one idea to my life, it was
-            worth my time.
-        </p>
-    </div>
+    <div class="container">
+        <div class="card">
+            <h2>One Idea</h2>
+            <p>
+                I read a lot of books, over 60 a year for the last few years.
+                <br><br>
+                I have a mindset that if I can consume a book quickly and take away even just one idea, apply that one
+                idea to my life, it was worth my time.
+            </p>
+        </div>
 
-    <div class="book-grid">
-        <div class="book-card">
-            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1731624046i/214268997.jpg"
-                 alt="Tiny Experiments Book Cover" class="book-image">
-            <div class="book-content">
-                <h3>Tiny Experiments by Anne-Laure Le Cunff</h3>
-                <p>
-                    <strong>One Idea</strong> from Tiny Experiments by Anne-Laure Le Cunff, PhD, the difference between setting goals and making a pact. I have
-                    always struggled to set good goals, to look ahead and think what could I achieve and work backwards on how to get there. When I have tried
-                    to set goals I often have great intentions, but fall off on them along the way because they either are no longer a high priority or I learn
-                    its going to be more difficult than I expected or I just plain fail at getting to that goal.
-                    <br/><br/>
-                    I think that for me setting a pact instead of a goal would be more valuable. From the book a pact is an actionable commitment that you will
-                    fulfill over a set period of time. It follows the format of “I will [action] for [duration]” If your goal was to write a book thats a 1 time
-                    success or fail, thats going to take a long time and a lot of effort to achieve. The pact version would instead be “I will write for 10
-                    minutes every day”.
-                    <br/><br/>
-                    I really like this approach because I can focus on daily or weekly actions, I can focus on outputs I control rather than outcomes that may
-                    not always be in my control, I can achieve small wins frequently and build habits.
-                </p>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1694649809i/185034564.jpg"
+                    alt="The Cure for Burnout Book Cover" class="book-image">
+                <div class="book-content">
+                    <h3>The Cure for Burnout by Emily Ballesteros</h3>
+                    <div class="book-links">
+                        <a href="https://www.emilyballesteros.com/" target="_blank" class="link-btn">Emily
+                            Ballesteros</a>
+                    </div>
+                    <p>
+                        <strong>One Idea</strong> from "The Cure for Burnout" by Emily Ballesteros, M.A. is to follow healthy
+                        selfishness. If you are a people pleaser or an achiever, you could be causing your own burnout
+                        by focusing too much on external expectations and not enough on your own needs.
+                        <br><br>
+                        For the achiever, it can feel like all or nothing: if you don't give 100% all the time, then you
+                        are failing. Consider that your 80% might be better than someone else's 100%. Could you be more
+                        healthily selfish by recognizing that for you to continue to achieve, it's better to give only 80% in
+                        one area so that you can give 100% to yourself?
+                        <br><br>
+                        For the people pleaser: you feel you can never disappoint someone else, but how often does that lead to
+                        you disappointing yourself? What if you accepted that healthy relationships can handle you not
+                        doing everything you think is expected of you? You can have your own thoughts, opinions, and
+                        boundaries and still maintain those relationships.
+                        <br><br>
+                        For everyone: Done is better than perfect. Do things reasonably, not perfectly. Give yourself
+                        permission to do things well enough.
+                    </p>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1719786705i/203746293.jpg"
+                    alt="10 to 25 Book Cover" class="book-image">
+                <div class="book-content">
+                    <h3>10 to 25 by David Yeager</h3>
+                    <div class="book-links">
+                        <a href="https://www.simonandschuster.com/books/10-to-25/David-Yeager/9781668023884"
+                            target="_blank" class="link-btn">10 to 25</a>
+                    </div>
+                    <p>
+                        <strong>One Idea</strong> from "10 to 25" by David Yeager: provide a mentor mindset by setting
+                        both high standards and offering high support. While this book targets helping parents and
+                        teachers with people ages 10-25, many concepts could apply to anyone you mentor, coach, or
+                        collaborate with regardless of age.
+                        <br><br>
+                        Stress doesn’t have to be seen as negative, it can be enhancing. If we re-frame feelings of
+                        stress from pressure to excitement, we can recognize that it's there to energize us and harness
+                        that energy in the moment instead. This is where holding others to high expectations becomes
+                        crucial. Without elevated benchmarks to strive for, we won't experience the beneficial tension
+                        that pushes us.
+                        <br><br>
+                        However, high expectations alone can be damaging when not paired with the support needed to
+                        achieve them. We want our aims to be both attainable and challenging. We can add guidance so
+                        that expectations feel reachable by acknowledging the bar is set high and is meant to stretch
+                        them, reminding that it's natural to feel stress. Express confidence in their ability to grow.
+                        Take time to learn about their current struggles. Then collaborate on how to improve and
+                        ultimately achieve the desired outcome.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1731624046i/214268997.jpg"
+                    alt="Tiny Experiments Book Cover" class="book-image">
+                <div class="book-content">
+                    <h3>Tiny Experiments by Anne-Laure Le Cunff</h3>
+                    <div class="book-links">
+                        <a href="https://nesslabs.com/book" target="_blank" class="link-btn">Tiny Experiments</a>
+                    </div>
+                    <p>
+                        <strong>One Idea</strong> from "Tiny Experiments" by Anne-Laure Le Cunff, PhD, is the difference
+                        between setting goals and making a pact. I have
+                        always struggled to set good goals, to look ahead and think about what I could achieve and work
+                        backwards on how to get there. When I have tried
+                        to set goals, I often have great intentions, but fall off on them along the way because they
+                        either are no longer a high priority, or I learn
+                        it's going to be more difficult than I expected, or I just plain fail at getting to that goal.
+                        <br /><br />
+                        I think that for me, setting a pact instead of a goal would be more valuable. From the book, a
+                        pact is an actionable commitment that you will
+                        fulfill over a set period of time. It follows the format of "I will [action] for [duration]." If
+                        your goal was to write a book, that's a one-time
+                        success or fail that's going to take a long time and a lot of effort to achieve. The pact
+                        version would instead be “I will write for 10
+                        minutes every day”.
+                        <br /><br />
+                        I really like this approach because I can focus on daily or weekly actions, I can focus on
+                        outputs I control rather than outcomes that may
+                        not always be in my control, I can achieve small wins frequently and build habits.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer>
-    <p>©
-        <script>document.write(new Date().getFullYear())</script>
-        Christian Peters. All rights reserved.
-    </p>
-</footer>
+    <footer>
+        <p>©
+            <script>document.write(new Date().getFullYear())</script>
+            Christian Peters. All rights reserved.
+        </p>
+    </footer>
 
-<script>
-    function revealEmail() {
-        var username = 'christian.peters';
-        var domain = 'gmail.com';
-        window.location.href = 'mailto:' + username + '@' + domain;
-    }
-</script>
+    <script>
+        function revealEmail() {
+            var username = 'christian.peters';
+            var domain = 'gmail.com';
+            window.location.href = 'mailto:' + username + '@' + domain;
+        }
+    </script>
 </body>
+
 </html>
