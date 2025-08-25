@@ -387,6 +387,13 @@ footer {
 }
 
 /* Books page specific styles */
+.book-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
 .books-grid {
     display: grid;
     grid-template-columns: 1fr;
